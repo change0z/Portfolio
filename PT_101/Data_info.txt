@@ -32,6 +32,6 @@ Total_Trans_Ct			Total transaction count. (Integer)
 Total_Ct_Chng_Q4_Q1		Total count changed from quarter 4 to quarter 1. (Integer)
 Avg_Utilization_Ratio		Average utilization ratio of customer. (Integer)
 
-Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1			
+Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1			Naive Bayes classifier for predicting whether or not someone will churn based on characteristics such			
 
-					Naive Bayes classifier for predicting whether or not someone will churn based on characteristics such
+					
