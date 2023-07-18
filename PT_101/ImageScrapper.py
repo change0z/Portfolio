@@ -1,7 +1,7 @@
 from google_images_search import GoogleImagesSearch
 
 # Replace with your own Google Custom Search API key and Google Search Engine ID
-gis = GoogleImagesSearch('AIzaSyDCdpESdJy3FOeTWB1zngS153DqFRumw0w', '62af1a6d94d894ed6')
+gis = GoogleImagesSearch('', '')
 
 # Define search parameters
 search_params = {
