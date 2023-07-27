@@ -6,7 +6,7 @@ gis = GoogleImagesSearch('', '')
 # Define search parameters
 search_params = {
     'q': 'room interiors',
-    'num': 10000,
+    'num': 100,
     'imgSize': 'large',
     'fileType': 'jpg',
     'safe': 'high',
