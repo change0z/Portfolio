@@ -5,13 +5,13 @@ from tqdm import tqdm
 import torch.nn as nn
 import torch.optim as optim
 from model import UNET
-'''from utils import (
+from utils import (
     load_checkpoints,
     save_checkpoints,
     get_loaders,
     check_accuracy,
     save_predictions_as_imgs,
-)'''
+)
 
 #Hyperparameters etc.
 LEARNING_RATE = 1e-4
@@ -68,6 +68,54 @@ def main():
             ToTensorV2(),
         ],
     )
+
+    val_transforms = A.Compose(
+        [
+            A.Resize(height=IMAGE_HEIGHT,width = IMAGE_WIDTH),
+            A.Normalize(
+                mean=[0.0,0.0,0.0],
+                std=[1.0,1.0,1.0],
+                min_pixel_value = 255.0,
+            ),
+            ToTensorV2(),
+        ],
+    )
+    
+    model = UNET(in_channels=3, out_channels=1).to(DEVICE)
+    loss_fn = nn.BCEWithLogitsLoss()
+    # for muslti class segmentation change the out_channels to the number of classes and change the Loss function to cross entropy loss
+    optimzer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
+
+    train_loader, val_loader = get_loaders(
+        TRAIN_IMG_DIR,
+        TRAIN_MASK_DIR,
+        VAL_IMG_DIR,
+        VAL_MASK_DIR,
+        train_transform,
+        val_transforms,
+        NUM_WORKERS,
+        PIN_MEMORY,
+    )
+
+    scaler = torch.cuda.amp.GradScaler()
+    for epoch in range(NUM_EPOCHS):
+        train_fn(train_loader, model, optimzer,loss_fn, scaler)
+
+        #save model
+        checkpoint = {
+             "state_dict": model.state_dict(),
+             "optimizer":optimzer.state_dict(),
+         }
+        save_checkpoints(checkpoint)
+        #check accuracy
+        check_accuracy(val_loader, model, device=DEVICE)
+        save_predictions_as_imgs(
+            val_loader, model, folder="saved_images/", device = DEVICE
+        )
+        #print some examples
+
+
+
 
 if __name__ == "__main__":
     main()
