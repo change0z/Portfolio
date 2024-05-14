@@ -9,7 +9,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - .:/Docker:/docker-volume"  # Correct the volume mapping syntax
+      - ./Data:/usr/src/app"  # Correct the volume mapping syntax
     command: ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
 
   postgres:
