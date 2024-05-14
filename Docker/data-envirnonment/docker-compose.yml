@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  custom_env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: data_env_image
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/Docker:/docker-volume"  # Correct the volume mapping syntax
+    command: ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=portfolio
+      - POSTGRES_USER=change0z
+      - POSTGRES_DB=Portfolio
