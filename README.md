@@ -71,3 +71,7 @@ I'm a Machine Learning Engineer and Data Scientist with 4+ years of experience d
 ## Contact Information
 - **LinkedIn:** [Ziyad Shaikh](www.linkedin.com/in/ziyad-shaikh-55250b194)
 - **GitHub:** [change0z](https://github.com/change0z/Portfolio)
+
+
+#### NOTE:
+The [Docker](https://github.com/change0z/Portfolio/blob/main/Dockerfile) file can be used to run majority of the project but please check if the repository being used has its own docker file.
