@@ -31,7 +31,7 @@ I'm a Machine Learning Engineer and Data Scientist with 4+ years of experience d
 - **Description:** Worked on smaller machine learning concepts to better understand the concepts.
 - **Technologies used:** Pandas, scikit-learn, pytorch, tensorflow
 - **Results:** All the models produce a result of over 85% accuracy in real world applications
-- **Repository:** [Link to project repo]
+- **Repository:** [https://github.com/change0z/Machine-Learning-Projects]
 
 ### Data Analysis Projects 
 - **Category:** Analysis
@@ -45,14 +45,14 @@ I'm a Machine Learning Engineer and Data Scientist with 4+ years of experience d
 - **Description:** Working on creating a web server from scratch
 - **Technologies used:**  C++
 - **Results:** --
-- **Repository:** [Link to project repo]
+- **Repository:** [https://github.com/change0z/Web-Server]
 
 ### Spark in Scala implementation (Ongoing)
 - **Category:** Data engineering
 - **Description:** Developing a project that runs on scala and utilises apache spark.
 - **Technologies used:** sbt, spark, scala
 - **Results:** --
-- **Repository:** [Link to project repo]
+- **Repository:** [https://github.com/change0z/Scala-Spark]
 
 ## Certifications
 - Deep Learning Specialization (5 Courses) - Deep Learning.AI
